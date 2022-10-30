@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-^&kw_#rg$0$v#zrim$12kzr4$tpe7g+(i@xqiin-q6mq6btdz8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'blog.apps.BlogConfig',
 ]
 
 MIDDLEWARE = [
@@ -75,8 +76,12 @@ WSGI_APPLICATION = 'mathblog.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'mathblog',
+        'USER': 'danik',
+        'PASSWORD': '1251',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
